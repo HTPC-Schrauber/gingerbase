@@ -103,7 +103,7 @@ class HostModel(object):
         """
         try:
             with open(PROC_CPUINFO) as f:
-                for line in f.xreadlines():
+                for line in f:
                     if 'model name' in line:
                         return line.split(':')[1].strip()
                         break
